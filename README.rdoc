@@ -12,10 +12,10 @@ Inspired by sinatra-activerecord (https://github.com/janko-m/sinatra-activerecor
   # Use a Hash
   Grape::ActiveRecord.database = {adapter: 'postgresql', host: 'localhost', database: 'db', username: 'user', password: 'pass', encoding: 'utf8', pool: 10, timeout: 5000}
 
-  # URL (can also be set as env var DATABASE_URL)
+  # or a URL
   Grape::ActiveRecord.database_url = 'postgres://user:pass@localhost/db'
 
-  # From a YAML file (containing a section for each environment)
+  # or a YAML file
   Grape::ActiveRecord.database_file = 'config/database.yml'
 
 If you don't specify any configuration, grape-activerecord will first look in DATABASE_URL, then in config/database.yml.
