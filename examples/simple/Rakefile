@@ -1,0 +1,2 @@
+require './app'
+require 'grape/activerecord/rake'

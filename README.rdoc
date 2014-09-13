@@ -1,0 +1,54 @@
+== grape-activerecord
+
+Simple integration of ActiveRecord connections and Rake tasks with Grape. Supports ActiveRecord 4.x.
+Inspired by sinatra-activerecord (https://github.com/janko-m/sinatra-activerecord).
+
+=== Add to your Gemfile
+
+  gem 'grape-activerecord'
+
+=== Set database config
+
+  # Use a Hash
+  Grape::ActiveRecord.database = {adapter: 'postgresql', host: 'localhost', database: 'db', username: 'user', password: 'pass', encoding: 'utf8', pool: 10, timeout: 5000}
+
+  # URL (can also be set as env var DATABASE_URL)
+  Grape::ActiveRecord.database_url = 'postgres://user:pass@localhost/db'
+
+  # From a YAML file (containing a section for each environment)
+  Grape::ActiveRecord.database_file = 'config/database.yml'
+
+If you don't specify any configuration, grape-activerecord will first look in DATABASE_URL, then in config/database.yml.
+
+=== Include Grape::ActiveRecord::Extension
+
+  class MyApi < Grape::API
+    include Grape::ActiveRecord::Extension
+    ...
+  end
+
+This will establish the database connections and correctly return used connections to the pool after each request.
+NOTE If you're mounting sub Grape apps, you need only include grape-activerecord in the root app.
+
+=== Add ActiveRecord tasks to your Rakefile
+
+   # Add at the bottom of your Rakefile
+   require 'grape/activerecord/rake'
+
+This will give you most of the standard "db:" tasks you get in Rails. Run "bundle exec rake -T" to get a full list.
+Note that unlike in Rails, creating a new migration is also a rake task:
+
+  bundle exec rake db:create_migration NAME=create_widgets
+
+=== Customize ActiveRecord rake tasks config
+
+  # The defaults are the same as Rails'
+  ActiveRecord::Tasks::DatabaseTasks.tap do |config|
+    config.db_dir = 'db'
+    config.migrations_paths = ['db/migrate']
+    config.fixtures_path = 'test/fixtures'
+  end
+
+=== Example app
+
+Look under /examples for some example apps.
