@@ -1,0 +1,6 @@
+0.0.2
+- Bugfix: Unhandled exceptions were leaking ActiveRecord connections
+- Use ::ActiveRecord::ConnectionAdapters::ConnectionManagement middleware instead of duplicating it
+
+0.0.1
+- Initial release
