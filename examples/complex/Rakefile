@@ -1,2 +1,8 @@
-require './config/environment'
+require 'bundler/setup'
 require 'grape/activerecord/rake'
+
+namespace :db do
+  task :environment do
+    require 'config/environment'
+  end
+end
