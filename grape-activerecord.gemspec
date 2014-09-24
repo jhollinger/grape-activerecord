@@ -4,7 +4,7 @@ require File.expand_path('../lib/grape/activerecord/version.rb', __FILE__)
 Gem::Specification.new do |gem|
   gem.name = 'grape-activerecord'
   gem.version = Grape::ActiveRecord::VERSION
-  gem.date = '2014-09-22'
+  gem.date = '2014-09-24'
 
   gem.description = 'Extends Grape with simple ActiveRecord integration'
   gem.summary = 'ActiveRecord integration for Grape'

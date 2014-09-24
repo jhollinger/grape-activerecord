@@ -1,3 +1,6 @@
+0.0.3
+- Cleaner ActiveRecord Rake task integration
+
 0.0.2
 - Bugfix: Unhandled exceptions were leaking ActiveRecord connections
 - Use ::ActiveRecord::ConnectionAdapters::ConnectionManagement middleware instead of duplicating it
