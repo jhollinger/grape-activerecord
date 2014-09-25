@@ -1,3 +1,6 @@
+0.0.4
+- Bugfix to db:create_migration rake task
+
 0.0.3
 - Cleaner ActiveRecord Rake task integration
 
