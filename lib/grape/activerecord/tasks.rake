@@ -1,6 +1,7 @@
-require "pathname"
-require "fileutils"
-require "active_support/core_ext/string/strip"
+require 'pathname'
+require 'fileutils'
+require 'active_support/core_ext/string/strip'
+require 'active_support/core_ext/string/inflections'
 
 namespace :db do
   desc "Create a migration (parameters: NAME, VERSION)"
