@@ -27,8 +27,16 @@ If you don't specify any configuration, grape-activerecord will first look in DA
     ...
   end
 
-This will establish the database connections and correctly return used connections to the pool after each request.
+This will establish the database connections and (usually) correctly return used connections to the pool after each request.
 NOTE If you're mounting sub Grape apps, you need only include grape-activerecord in the root app.
+
+==== Important
+
+It's recommended that you manually include ActiveRecord::ConnectionAdapters::ConnectionManagement yourself BEFORE mounting your Grape app (https://github.com/intridea/grape/issues/517#issuecomment-60969722). The top of your config.ru file is a good place:
+
+  # config.ru
+  use ActiveRecord::ConnectionAdapters::ConnectionManagement
+  run MyGrapeApi
 
 === Example Rakefile with ActiveRecord tasks
 
