@@ -4,6 +4,12 @@ require 'active_support/core_ext/string/strip'
 require 'active_support/core_ext/string/inflections'
 
 namespace :db do
+  namespace :test do
+    task :environment do
+      ENV['RACK_ENV'] = 'test'
+    end
+  end
+
   desc "Create a migration (parameters: NAME, VERSION)"
   task :create_migration do
     unless ENV["NAME"]
