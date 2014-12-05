@@ -6,7 +6,7 @@ Rake::Task.define_task('db:load_config') do
 
   ActiveRecord::Tasks::DatabaseTasks.tap do |config|
     config.root = Rake.application.original_dir
-    config.env = Grape::ActiveRecord::RACK_ENV
+    config.env = Grape::ActiveRecord::RACK_ENV.to_s
     config.db_dir = 'db'
     config.migrations_paths = ['db/migrate']
     config.fixtures_path = 'test/fixtures'
