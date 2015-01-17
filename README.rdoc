@@ -43,7 +43,7 @@ It's recommended that you manually include ActiveRecord::ConnectionAdapters::Con
   require 'bundler/setup'
   require 'grape/activerecord/rake'
 
-  namespace :db
+  namespace :db do
     # Some db tasks require your app code to be loaded
     task :environment do
       require_relative 'app'
