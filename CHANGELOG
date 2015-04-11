@@ -1,4 +1,4 @@
-0.0.7
+0.0.8
 - Automatically pull in the hashie-forbidden_attributes gem, which fixes some conflicts between Hashie (used by Grape) and ActiveRecord
 
 0.0.6
