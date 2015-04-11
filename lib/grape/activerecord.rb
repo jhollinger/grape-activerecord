@@ -1,4 +1,5 @@
 require 'erb'
+require 'hashie-forbidden_attributes'
 require 'grape/activerecord/version'
 require 'grape/activerecord/activerecord'
 require 'grape/activerecord/extension'
