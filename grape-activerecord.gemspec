@@ -21,4 +21,5 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'grape', '~> 0.1'
   gem.add_dependency 'activerecord', '~> 4.0'
+  gem.add_dependency 'hashie-forbidden_attributes', '~> 0.1.1'
 end
