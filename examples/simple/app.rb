@@ -3,9 +3,6 @@ require 'bundler'
 Bundler.require(:default, RACK_ENV)
 
 class App < Grape::API
-  Grape::ActiveRecord.database = {adapter: 'sqlite3', database: "db/#{RACK_ENV}.sqlite3"}
-  include Grape::ActiveRecord::Extension
-
   version 'v1', using: :path
   format :json
 

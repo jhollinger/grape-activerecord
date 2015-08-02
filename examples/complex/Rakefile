@@ -3,6 +3,6 @@ require 'grape/activerecord/rake'
 
 namespace :db do
   task :environment do
-    require 'config/environment'
+    require_relative 'config/environment'
   end
 end

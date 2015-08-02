@@ -7,36 +7,29 @@ Inspired by sinatra-activerecord (https://github.com/janko-m/sinatra-activerecor
 
   gem 'grape-activerecord'
 
-=== Set database config
+=== Enable ActiveRecord connection management
 
-  # Use a Hash
-  Grape::ActiveRecord.database = {adapter: 'postgresql', host: 'localhost', database: 'db', username: 'user', password: 'pass', encoding: 'utf8', pool: 10, timeout: 5000}
+This is a middleware provided by ActiveRecord that makes sure your database connections are managed properly before and after every HTTP request. Add it to your config.ru file:
+
+  use ActiveRecord::ConnectionAdapters::ConnectionManagement
+
+=== Configure your database connection
+
+By default, grape-activerecord looks for your database configuration in two places:
+
+* A +config/database.yml+ file (see /examples for a sample file)
+* The +DATABASE_URL+ environment variable (e.g. +postgres://user:pass@host/db+)
+
+If the defaults aren't cool, you can configure the connection manually:
+
+  # Use a different YAML file
+  Grape::ActiveRecord.database_file = 'db.yml'
 
   # or a URL
-  Grape::ActiveRecord.database_url = 'postgres://user:pass@localhost/db'
+  Grape::ActiveRecord.database_url = 'postgres://user:pass@host/db'
 
-  # or a YAML file
-  Grape::ActiveRecord.database_file = 'config/database.yml'
-
-If you don't specify any configuration, grape-activerecord will first look in DATABASE_URL, then in config/database.yml.
-
-=== Include Grape::ActiveRecord::Extension
-
-  class MyApi < Grape::API
-    include Grape::ActiveRecord::Extension
-    ...
-  end
-
-This will establish the database connections and (usually) correctly return used connections to the pool after each request.
-NOTE If you're mounting sub Grape apps, you need only include grape-activerecord in the root app.
-
-==== Important
-
-It's recommended that you manually include ActiveRecord::ConnectionAdapters::ConnectionManagement yourself BEFORE mounting your Grape app (https://github.com/intridea/grape/issues/517#issuecomment-60969722). The top of your config.ru file is a good place:
-
-  # config.ru
-  use ActiveRecord::ConnectionAdapters::ConnectionManagement
-  run MyGrapeApi
+  # or a Hash
+  Grape::ActiveRecord.database = {adapter: 'postgresql', host: 'localhost', database: 'db', username: 'user', password: 'pass', encoding: 'utf8', pool: 10, timeout: 5000}
 
 === Example Rakefile with ActiveRecord tasks
 
