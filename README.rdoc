@@ -18,7 +18,7 @@ This is a middleware provided by ActiveRecord that makes sure your database conn
 By default, grape-activerecord looks for your database configuration in two places:
 
 * A +config/database.yml+ file (see /examples for a sample file)
-* The +DATABASE_URL+ environment variable (e.g. +postgres://user:pass@host/db+)
+* The +DATABASE_URL+ environment variable (e.g. <tt>postgres://user:pass@host/db</tt>)
 
 If the defaults aren't cool, you can configure the connection manually:
 
