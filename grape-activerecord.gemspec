@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
 
   gem.license = 'MIT'
 
-  gem.files = Dir['lib/**/**'] + ['README.rdoc', 'LICENSE']
+  gem.files = Dir['lib/**/**'] + ['README.md', 'LICENSE']
 
   gem.required_ruby_version = '>= 1.9.2'
 
