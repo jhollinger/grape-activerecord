@@ -17,7 +17,7 @@ grape-activerecord looks for your database configuration in:
 
 But if your app has more particular needs, we've got you covered:
 
-    Grape::ActiveRecord.database_file = "db.yml"
+    Grape::ActiveRecord.database_file = "elsewhere/db.yml"
     Grape::ActiveRecord.database_url = "postgres://user:pass@host/db"
     Grape::ActiveRecord.database = {adapter: "postgresql", host: "localhost", database: "db", username: "user", password: "pass", encoding: "utf8", pool: 10, timeout: 5000}
 
