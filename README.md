@@ -34,6 +34,9 @@ This will give you most of the standard `db:` tasks you get in Rails. Run `bundl
     require "bundler/setup"
     require "grape/activerecord/rake"
 
+    # NOTE If you set a custom db config in your app, you'll need to set it in your Rakefile too
+    # Grape::ActiveRecord.database_file = "elsewhere/db.yml"
+
     namespace :db do
       # Some db tasks require your app code to be loaded
       task :environment do

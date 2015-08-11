@@ -1,3 +1,8 @@
+1.0.1
+- Make Rakefile easier to configure with custom db location
+- README updates
+- Example app updates
+
 1.0.0
 - Fixes to support grape 0.12+
 - Remove need to use Grape::ActiveRecord::Extension - set up ActiveRecord connections immediately using sane default

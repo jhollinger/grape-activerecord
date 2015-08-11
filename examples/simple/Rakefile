@@ -1,5 +1,6 @@
 require 'bundler/setup'
 require 'grape/activerecord/rake'
+Grape::ActiveRecord.database_file = 'db/config.yml'
 
 namespace :db do
   task :environment do

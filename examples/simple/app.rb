@@ -17,4 +17,5 @@ class App < Grape::API
   end
 end
 
+Grape::ActiveRecord.database_file = 'db/config.yml'
 Widget = Class.new(ActiveRecord::Base)
