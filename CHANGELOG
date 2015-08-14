@@ -1,3 +1,6 @@
+1.0.2
+- Bugfixes to loading db config in Rakefile
+
 1.0.1
 - Make Rakefile easier to configure with custom db location
 - README updates
