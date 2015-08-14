@@ -1,5 +1,4 @@
-Rake::Task['db:load_config'].clear
-Rake::Task.define_task('db:load_config') do
+Rake::Task.define_task('db:_load_config') do
   require 'grape/activerecord'
   ActiveRecord::Base.logger = nil
 
@@ -19,8 +18,19 @@ Rake::Task.define_task('db:load_config') do
   end
 end
 
+Rake::Task['db:load_config'].clear
+Rake::Task.define_task('db:load_config') do
+  # Run the user's db:environment task first, so they have an opportunity to set a custom db config location
+  Rake::Task['db:environment'].invoke
+end
+
 Rake::Task.define_task('db:environment') do
-  Rake::Task['db:load_config'].invoke
+  # defined by user
+end
+
+# Load db config at the end of user-defined db:environment
+Rake::Task['db:environment'].enhance do
+  Rake::Task['db:_load_config'].invoke
 end
 
 Rake::Task['db:test:deprecated'].clear if Rake::Task.task_defined?('db:test:deprecated')
