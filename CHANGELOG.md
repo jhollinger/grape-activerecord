@@ -1,15 +1,15 @@
-### 1.0.3
-* Bugfix to Grape::ActiveRecord.database_url - [PR #5](https://github.com/jhollinger/grape-activerecord/pull/5) - [rngtng](https://github.com/rngtng)
+### 1.0.3  (2015-08-28)
+* Bugfix to `Grape::ActiveRecord.database_url` - [PR #5](https://github.com/jhollinger/grape-activerecord/pull/5) - [rngtng](https://github.com/rngtng)
 
-### 1.0.2
+### 1.0.2 (2015-08-14)
 * Bugfixes to loading db config in Rakefile
 
-### 1.0.1
+### 1.0.1 (2015-08-10)
 * Make Rakefile easier to configure with custom db location
 * README updates
 * Example app updates
 
-### 1.0.0
+### 1.0.0 (2015-08-01)
 * Fixes to support grape 0.12+
 * Remove need to use Grape::ActiveRecord::Extension - set up ActiveRecord connections immediately using sane default
 
