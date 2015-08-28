@@ -35,7 +35,7 @@ GEM
       rack-accept
       rack-mount
       virtus (>= 1.0.0)
-    grape-activerecord (1.0.2)
+    grape-activerecord (1.0.3)
       activerecord (~> 4.0)
       grape (~> 0.1)
       hashie-forbidden_attributes (~> 0.1.1)
