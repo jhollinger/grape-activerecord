@@ -14,8 +14,7 @@ module Grape
 
     # Connect to database with a DB URL. Example: "postgres://user:pass@localhost/db"
     def self.database_url=(url)
-      ::ActiveRecord::Base.establish_connection(url)
-      ::ActiveRecord::Base.configurations = {RACK_ENV.to_s => ::ActiveRecord::Base.connection.pool.spec.config}
+      self.database = ::ActiveRecord::ConnectionAdapters::ConnectionSpecification::ConnectionUrlResolver.new(url).to_hash
     end
 
     # Connect to database with a yml file. Example: "config/database.yml"
