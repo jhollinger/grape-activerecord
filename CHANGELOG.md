@@ -1,3 +1,6 @@
+### 1.1.0 (2015-10-16)
+* Add options to customize location of migration files, seeds file, etc.
+
 ### 1.0.3  (2015-08-28)
 * Bugfix to `Grape::ActiveRecord.database_url` - [PR #5](https://github.com/jhollinger/grape-activerecord/pull/5) - [rngtng](https://github.com/rngtng)
 
