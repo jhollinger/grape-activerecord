@@ -23,13 +23,13 @@ But if your app has more particular needs, we've got you covered:
 
 ### 3. Enable ActiveRecord connection management
 
-This ActiveRecord middleware cleans up your database connections after each request. Add it to your config.ru file:
+This ActiveRecord middleware cleans up your database connections after each request. Add it to your `config.ru` file:
 
     use ActiveRecord::ConnectionAdapters::ConnectionManagement
 
 ### 4. Import ActiveRecord tasks into your Rakefile
 
-This will give you most of the standard `db:` tasks you get in Rails. Run `bundle exec rake -T` to get a full list.
+This will give you most of the standard `db:` tasks you get in Rails. Add it to your `Rakefile`.
 
     require "bundler/setup"
     require "grape/activerecord/rake"
@@ -44,7 +44,7 @@ This will give you most of the standard `db:` tasks you get in Rails. Run `bundl
       end
     end
 
-Unlike in Rails, creating a new migration is also a rake task:
+Unlike in Rails, creating a new migration is also a rake task. Run `bundle exec rake -T` to get a full list.
 
     bundle exec rake db:create_migration NAME=create_widgets
 
