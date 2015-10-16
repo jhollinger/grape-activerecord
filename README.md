@@ -1,6 +1,6 @@
 # grape-activerecord
 
-A simple way to use ActiveRecord with your Grape apps. The defaults are all very Railsy (`config/database.yml`, `db/seeds.rb`, `db/migrate`, etc.). Look under Advanced Options if you're to cool for that.
+A simple way to use ActiveRecord with your Grape apps. The defaults are all very Railsy (`config/database.yml`, `db/seeds.rb`, `db/migrate`, etc.), but you can easily change them.
 
 ## How to use
 
