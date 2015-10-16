@@ -4,24 +4,24 @@ A simple way to use ActiveRecord with your Grape apps. The defaults are all very
 
 ## How to use
 
-### 1. Add it to your Gemfile
+#### 1. Add it to your Gemfile
 
     gem "grape-activerecord"
 
-### 2. Configure your database connection
+#### 2. Configure your database connection
 
 By default grape-activerecord looks for your database configuration in:
 
 * `config/database.yml` (see /examples for a sample file)
 * The `DATABASE_URL` environment variable (e.g. `postgres://user:pass@host/db`)
 
-### 3. Enable ActiveRecord connection management
+#### 3. Enable ActiveRecord connection management
 
 This ActiveRecord middleware cleans up your database connections after each request. Add it to your `config.ru` file:
 
     use ActiveRecord::ConnectionAdapters::ConnectionManagement
 
-### 4. Import ActiveRecord tasks into your Rakefile
+#### 4. Import ActiveRecord tasks into your Rakefile
 
 This will give you most of the standard `db:` tasks you get in Rails. Add it to your `Rakefile`.
 
