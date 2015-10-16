@@ -5,14 +5,14 @@ Rake::Task.define_task('db:_load_config') do
   ActiveRecord::Tasks::DatabaseTasks.tap do |config|
     config.root = Rake.application.original_dir
     config.env = Grape::ActiveRecord::RACK_ENV.to_s
-    config.db_dir = 'db'
-    config.migrations_paths = ['db/migrate']
-    config.fixtures_path = 'test/fixtures'
+    config.db_dir = Grape::ActiveRecord.db_dir
+    config.migrations_paths = Array(Grape::ActiveRecord.migrations_paths)
+    config.fixtures_path = Grape::ActiveRecord.fixtures_path
     config.database_configuration = ActiveRecord::Base.configurations
     config.seed_loader = Object.new
     config.seed_loader.instance_eval do
       def load_seed
-        load "#{ActiveRecord::Tasks::DatabaseTasks.db_dir}/seeds.rb"
+        load "#{ActiveRecord::Tasks::DatabaseTasks.db_dir}/#{Grape::ActiveRecord.seed_file}"
       end
     end
   end

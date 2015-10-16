@@ -2,6 +2,17 @@
 module Grape
   # Grape and ActiveRecord integration
   module ActiveRecord
+    class << self
+      # Relative path to the "db" dir
+      attr_accessor :db_dir
+      # Relative path(s) to the migrations directory
+      attr_accessor :migrations_paths
+      # Relative path to the fixtures directory
+      attr_accessor :fixtures_path
+      # Name of the seeds file in db_dir
+      attr_accessor :seed_file
+    end
+
     # The current Rack environment
     RACK_ENV = (ENV['RACK_ENV'] || 'development').to_sym
 
