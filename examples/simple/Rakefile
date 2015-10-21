@@ -3,7 +3,6 @@ require 'grape/activerecord/rake'
 
 namespace :db do
   task :environment do
-    Grape::ActiveRecord.database_file = 'db/config.yml'
     require_relative 'app'
   end
 end
