@@ -1,3 +1,6 @@
+### 1.1.1 (2015-10-21)
+* Bugfix to detecting RACK_ENV in Rakefiles
+
 ### 1.1.0 (2015-10-16)
 * Add options to customize location of migration files, seeds file, etc.
 
