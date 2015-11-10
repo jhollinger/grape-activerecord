@@ -34,7 +34,7 @@ module Grape
 
     # The current Rack environment
     def self.rack_env
-      (ENV['RACK_ENV'] || 'development').to_sym
+      (ENV['RACK_ENV'] || ENV['RAILS_ENV'] || 'development').to_sym
     end
   end
 end
