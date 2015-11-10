@@ -1,3 +1,6 @@
+### 1.1.2 (2015-11-10)
+* Fall back to RAILS_ENV if RACK_ENV doesn't exist (fixes some tooling, like capistrano + capistrano-rails)
+
 ### 1.1.1 (2015-10-21)
 * Bugfix to detecting RACK_ENV in Rakefiles
 
