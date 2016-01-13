@@ -10,10 +10,11 @@ A simple way to use ActiveRecord with your Grape apps. The defaults are all very
 
 #### 2. Configure your database connection
 
-By default grape-activerecord looks for your database configuration in:
+After loading your gems, tell `Grape::ActiveRecord` about your database config using one of the following examples:
 
-* `config/database.yml` (see /examples for a sample file)
-* The `DATABASE_URL` environment variable (e.g. `postgres://user:pass@host/db`)
+    Grape::ActiveRecord.database_file = "config/database.yml"
+    Grape::ActiveRecord.database_url = ENV['DATABASE_URL'] # e.g. postgres://user:pass@host/db
+    Grape::ActiveRecord.database = {adapter: "postgresql", host: "localhost", database: "db", username: "user", password: "pass", encoding: "utf8", pool: 10, timeout: 5000}
 
 #### 3. Enable ActiveRecord connection management
 
@@ -45,13 +46,7 @@ Look under /examples for some example apps.
 
 ## Advanced options
 
-You have a number of ways to tell ActiveRecord about your database. Use these options early in your app's boot process: somewhere between bundler and your app code. And make sure they make it into your `Rakefile` (maybe in `require_relative "app"` above.)
-
-    Grape::ActiveRecord.database_file = "elsewhere/db.yml"
-    Grape::ActiveRecord.database_url = "postgres://user:pass@host/db"
-    Grape::ActiveRecord.database = {adapter: "postgresql", host: "localhost", database: "db", username: "user", password: "pass", encoding: "utf8", pool: 10, timeout: 5000}
-
-You can configure custom locations for your db-related files like migrations, seeds, and fixtures. You should probably put these near the top of your `Rakefile`, before defining your tasks.
+The defaults for db-related files like migrations, seeds, and fixtures are the same as Rails. If you want to override them, use the following options:
 
     Grape::ActiveRecord.db_dir = 'db'
     Grape::ActiveRecord.migrations_paths = ['db/migrate']
