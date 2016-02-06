@@ -14,7 +14,7 @@ After loading your gems, tell `Grape::ActiveRecord` about your database config u
 
     Grape::ActiveRecord.configure_from_file! "config/database.yml"
     Grape::ActiveRecord.configure_from_url! ENV['DATABASE_URL'] # e.g. postgres://user:pass@host/db
-    Grape::ActiveRecord.configure_from_hash! {adapter: "postgresql", host: "localhost", database: "db", username: "user", password: "pass", encoding: "utf8", pool: 10, timeout: 5000}
+    Grape::ActiveRecord.configure_from_hash!(adapter: "postgresql", host: "localhost", database: "db", username: "user", password: "pass", encoding: "utf8", pool: 10, timeout: 5000)
 
 #### 3. Enable ActiveRecord connection management
 
