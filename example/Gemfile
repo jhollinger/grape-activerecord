@@ -1,0 +1,19 @@
+source 'https://rubygems.org'
+
+gem 'rack', '~> 1.6.0'
+gem 'grape', '~> 0.14.0'
+gem 'grape-entity', '~> 0.5.0'
+gem 'activerecord', '~> 4.2.0', require: 'active_record'
+#gem 'grape-activerecord', '~> 1.1.1'
+gem 'grape-activerecord', git: 'https://github.com/jhollinger/grape-activerecord.git', tag: 'v2.0.0-rc1'
+gem 'sqlite3'
+gem 'rake'
+
+group :development do
+  gem 'shotgun'
+end
+
+group :test do
+  gem 'rack-test', require: 'rack/test'
+  gem 'database_cleaner'
+end
