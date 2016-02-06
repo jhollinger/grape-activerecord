@@ -9,6 +9,3 @@ Config.root = Pathname.new(File.expand_path('../..', __FILE__))
 # Load dependencies
 require 'bundler'
 Bundler.require(:default, Config.env)
-
-# Connect to database
-Grape::ActiveRecord.database_file = Config.root.join('config', 'database.yml')

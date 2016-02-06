@@ -46,7 +46,7 @@ Look under /example for an example app.
 
 ## Advanced options
 
-The defaults for db-related files like migrations, seeds, and fixtures are the same as Rails. If you want to override them, use the following options:
+The defaults for db-related files like migrations, seeds, and fixtures are the same as Rails. If you want to override them, use the following options in your `Rakefile`:
 
     Grape::ActiveRecord.db_dir = 'db'
     Grape::ActiveRecord.migrations_paths = ['db/migrate']

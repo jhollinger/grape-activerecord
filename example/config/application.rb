@@ -1,6 +1,9 @@
 require './config/environment'
 $:.unshift Config.root.join('lib')
 
+# Connect to database
+Grape::ActiveRecord.configure_from_file! Config.root.join('config', 'database.yml')
+
 # Load application
 [
   %w(app models ** *.rb),

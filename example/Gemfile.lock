@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/jhollinger/grape-activerecord.git
-  revision: 2174fdc86531645e2b28d4a5557a727c236b38b7
-  tag: v2.0.0-rc1
-  specs:
-    grape-activerecord (2.0.0.pre.rc1)
-      activerecord (~> 4.0)
-      grape (~> 0.1)
-      hashie-forbidden_attributes (~> 0.1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,6 +36,10 @@ GEM
       rack-accept
       rack-mount
       virtus (>= 1.0.0)
+    grape-activerecord (2.0.0)
+      activerecord (~> 4.0)
+      grape (~> 0.1)
+      hashie-forbidden_attributes (~> 0.1.1)
     grape-entity (0.5.0)
       activesupport
       multi_json (>= 1.3.2)
@@ -85,7 +79,7 @@ DEPENDENCIES
   activerecord (~> 4.2.0)
   database_cleaner
   grape (~> 0.14.0)
-  grape-activerecord!
+  grape-activerecord (~> 2.0.0)
   grape-entity (~> 0.5.0)
   rack (~> 1.6.0)
   rack-test

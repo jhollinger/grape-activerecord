@@ -1,5 +1,4 @@
 Rake::Task.define_task('db:_load_config') do
-  require 'grape/activerecord'
   ActiveRecord::Base.logger = nil
 
   ActiveRecord::Tasks::DatabaseTasks.tap do |config|
