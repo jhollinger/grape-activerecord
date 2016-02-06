@@ -15,18 +15,18 @@ module Grape
 
     # Connect to database with a Hash. Example:
     # {adapter: 'postgresql', host: 'localhost', database: 'db', username: 'user', password: 'pass', encoding: 'utf8', pool: 10, timeout: 5000}
-    def self.database=(spec)
+    def self.configure_from_hash!(spec)
       ::ActiveRecord::Base.configurations = {rack_env => spec}.stringify_keys
       ::ActiveRecord::Base.establish_connection(rack_env)
     end
 
     # Connect to database with a DB URL. Example: "postgres://user:pass@localhost/db"
-    def self.database_url=(url)
-      self.database = ::ActiveRecord::ConnectionAdapters::ConnectionSpecification::ConnectionUrlResolver.new(url).to_hash
+    def self.configure_from_url!(url)
+      configure_from_hash! ::ActiveRecord::ConnectionAdapters::ConnectionSpecification::ConnectionUrlResolver.new(url).to_hash
     end
 
     # Connect to database with a yml file. Example: "config/database.yml"
-    def self.database_file=(path)
+    def self.configure_from_file!(path)
       raise "#{path} does not exist!" unless File.file? path
       ::ActiveRecord::Base.configurations = YAML.load(ERB.new(File.read(path)).result) || {}
       ::ActiveRecord::Base.establish_connection(rack_env)
