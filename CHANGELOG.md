@@ -1,3 +1,8 @@
+### 2.0.0 (2016-02-05)
+* BREAKING CHANGE Stop automatically connecting if `config/database.yml` or `DATABASE_URL` is present - [Issue #7](https://github.com/jhollinger/grape-activerecord/issues/7) - [lsimoneau](https://github.com/lsimoneau)
+* BREAKING CHANGE Use more explicit names when configuring the connection - [Issue #7](https://github.com/jhollinger/grape-activerecord/issues/7) - [dnagir](https://github.com/dnagir)
+* Update example app
+
 ### 1.1.2 (2015-11-10)
 * Fall back to RAILS_ENV if RACK_ENV doesn't exist (fixes some tooling, like capistrano + capistrano-rails)
 
