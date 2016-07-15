@@ -16,6 +16,9 @@ After loading your gems, tell `Grape::ActiveRecord` about your database config u
     Grape::ActiveRecord.configure_from_url! ENV['DATABASE_URL'] # e.g. postgres://user:pass@host/db
     Grape::ActiveRecord.configure_from_hash!(adapter: "postgresql", host: "localhost", database: "db", username: "user", password: "pass", encoding: "utf8", pool: 10, timeout: 5000)
 
+**Important note**: `configure_from_file!` won't work as expected if you have already `DATABASE_URL` set as part of your environment variables.
+This is because in ActiveRecord when that env variable is set it will merge its properties into the current connection configuration.
+
 #### 3. Enable ActiveRecord connection management
 
 This ActiveRecord middleware cleans up your database connections after each request. Add it to your `config.ru` file:
