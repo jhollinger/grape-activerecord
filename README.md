@@ -30,7 +30,7 @@ This ActiveRecord middleware cleans up your database connections after each requ
 This will give you most of the standard `db:` tasks you get in Rails. Add it to your `Rakefile`.
 
     require "bundler/setup"
-    require "grape/activerecord/rake"
+    load "grape/activerecord/tasks.rake"
 
     namespace :db do
       # Some db tasks require your app code to be loaded, or at least your gems

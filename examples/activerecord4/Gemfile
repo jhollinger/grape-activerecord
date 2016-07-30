@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rack', '~> 1.6.0'
-gem 'grape', '~> 0.14.0'
-gem 'grape-entity', '~> 0.5.0'
-gem 'activerecord', '~> 4.2.0', require: 'active_record'
-gem 'grape-activerecord', '~> 2.0.0'
+gem 'grape', '~> 0.17.0'
+gem 'grape-entity', '~> 0.5.1'
+gem 'activerecord', '~> 4.2.7', require: 'active_record'
+gem 'grape-activerecord', '~> 2.1.0'
 gem 'sqlite3'
 gem 'rake'
 

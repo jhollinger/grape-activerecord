@@ -1,3 +1,5 @@
+require 'erb'
+
 # Grape and ActiveRecord integration
 module Grape
   # Grape and ActiveRecord integration
@@ -11,6 +13,8 @@ module Grape
       attr_accessor :fixtures_path
       # Name of the seeds file in db_dir
       attr_accessor :seed_file
+      # Internal compatibility layer across different major versions of AR
+      attr_accessor :_normalizer
     end
 
     # Connect to database with a Hash. Example:

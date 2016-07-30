@@ -1,6 +1,6 @@
 require 'bundler/setup'
 require 'rake/testtask'
-require 'grape/activerecord/rake'
+load 'grape/activerecord/tasks.rake'
 
 #Grape::ActiveRecord.db_dir = 'db'
 #Grape::ActiveRecord.migrations_paths = ['db/migrate']
