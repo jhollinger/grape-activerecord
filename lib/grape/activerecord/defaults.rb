@@ -4,4 +4,5 @@ Grape::ActiveRecord.fixtures_path = 'test/fixtures'
 Grape::ActiveRecord.seed_file = 'seeds.rb'
 Grape::ActiveRecord._normalizer = case ::ActiveRecord::VERSION::MAJOR
                                   when 4 then Grape::ActiveRecord::Compatibility4.new
+                                  when 5 then Grape::ActiveRecord::Compatibility5.new
                                   end
