@@ -13,12 +13,12 @@ module Grape
 
       # All db migration dir paths
       def migrations_paths
-        ::ActiveRecord::Migrator.migrations_paths
+        OTR::ActiveRecord.migrations_paths
       end
 
       # The dir in which to put new migrations
       def migrations_path
-        ::ActiveRecord::Migrator.migrations_paths[0]
+        OTR::ActiveRecord.migrations_paths[0]
       end
 
       # Basename of migration classes
