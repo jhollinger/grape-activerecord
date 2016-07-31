@@ -1,2 +1,2 @@
-$stderr.puts "WARNING: loading 'grape/activerecord/rake' in your Rakefile is deprecated; load 'grape/activerecord/tasks.rake' instead"
-load "grape/activerecord/tasks.rake"
+$stderr.puts "WARNING: loading 'grape/activerecord/rake' in your Rakefile is deprecated; do 'load \"tasks/grape-activerecord.rake\"' instead"
+load "tasks/grape-activerecord.rake"
