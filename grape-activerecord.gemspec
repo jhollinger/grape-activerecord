@@ -1,9 +1,8 @@
 # encoding: utf-8
 
-require File.expand_path('../lib/grape/activerecord/version.rb', __FILE__)
 Gem::Specification.new do |gem|
   gem.name = 'grape-activerecord'
-  gem.version = Grape::ActiveRecord::VERSION
+  gem.version = '2.2.0'
   gem.date = '2016-08-01'
 
   gem.description = 'Extends Grape with simple ActiveRecord integration. MOVED TO otr-activerecord.'
