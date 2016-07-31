@@ -1,4 +1,4 @@
-### 2.1.0 (?)
+### 2.1.0 (2016-07-31)
 * Require Ruby >= 2.1.0
 * Major internal refactoring to allow multipe AR versions to be supported
 * Deprecate 'grape/activerecord/rake' in Rakefile; load 'tasks/grape-activerecord.rake' instead
