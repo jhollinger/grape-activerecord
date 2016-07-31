@@ -1,3 +1,6 @@
+### 2.2.0 (2016-08-01)
+* Gut `grape-activerecord` and automatically install `otr-activerecord`
+
 ### 2.1.0 (2016-07-31)
 * Require Ruby >= 2.1.0
 * Major internal refactoring to allow multipe AR versions to be supported
