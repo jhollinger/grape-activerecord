@@ -1,6 +1,7 @@
 ### 2.1.0 (?)
 * Require Ruby >= 2.1.0
 * Major internal refactoring to allow multipe AR versions to be supported
+* Deprecate 'grape/activerecord/rake' in Rakefile; load 'grape/activerecord/tasks.rake' instead
 
 ### 2.0.0 (2016-02-05)
 * BREAKING CHANGE Stop automatically connecting if `config/database.yml` or `DATABASE_URL` is present - [Issue #7](https://github.com/jhollinger/grape-activerecord/issues/7) - [lsimoneau](https://github.com/lsimoneau)
